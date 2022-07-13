@@ -8,8 +8,9 @@ use App\Http\Resources\FoodResource;
 use App\Models\Food;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
-use Symfony\Contracts\Service\Attribute\Required;
+
 
 class ApiFoodController extends Controller
 {
@@ -89,5 +90,9 @@ class ApiFoodController extends Controller
         }catch(Exception $e){
             return ["error"=>$e->getMessage(), "status"=>"fail"];
         }
+    }
+    public function search($key)
+    {
+        return  Food::where('name', 'Like', "%$key%")->orWhere('price', 'Like', "%$key%")->get();
     }
 }

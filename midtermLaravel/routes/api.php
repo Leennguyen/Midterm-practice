@@ -25,4 +25,6 @@ Route::prefix("/foods")->group(function(){
     Route::post("", [ApiFoodController::class, "create"]);
     Route::put("/{id}", [ApiFoodController::class, "update"]);
     Route::delete("/{id}", [ApiFoodController::class, "delete"]);
+    // Route::get("/{id}", [ApiFoodController::class. "search"]);
 });
+Route::get('search/{key}', [ApiFoodController::class, 'search']);
