@@ -11,7 +11,7 @@ class Food extends Model
     protected $table = "foods";
 
     public function category() {
-        return $this->belongsTo(Category::class, "idcategory", "id");
+        return $this->belongsTo(Category::class, "idCategory", "id");
     }
 
 }

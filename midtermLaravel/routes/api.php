@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ApiCategoryController;
 use App\Http\Controllers\Api\ApiFoodController;
 use App\Models\Food;
 use Illuminate\Http\Request;
@@ -26,5 +27,7 @@ Route::prefix("/foods")->group(function(){
     Route::put("/{id}", [ApiFoodController::class, "update"]);
     Route::delete("/{id}", [ApiFoodController::class, "delete"]);
     // Route::get("/{id}", [ApiFoodController::class. "search"]);
+
 });
+Route::get("/categories/statistics", [ApiCategoryController::class, "statistics"]);
 Route::get('search/{key}', [ApiFoodController::class, 'search']);

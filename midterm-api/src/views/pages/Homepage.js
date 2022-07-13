@@ -11,10 +11,10 @@ const HomePage = () => {
   const [search, setSearch] = useState();
 
   useEffect(() => {
-    fetchFoods();
+    getFoods();
   }, []);
 
-  const fetchFoods = async () => {
+  const getFoods = async () => {
     await axios.get(`http://localhost:8000/api/foods`).then(({ data }) => {
       setFoods(data.data);
     });
