@@ -16,10 +16,11 @@ class FoodFactory extends Factory
      */
     public function definition()
     {
+        $imgs = ["bo.jpg", "bido.jpg", "cachua.jpg","cam.jpg","nho.jpg","thơm.jpg"];
         return [
             'name' => $this->faker->name(),
             'price' => rand(1, 100),
-            'img'=>"",
+            'img'=>$imgs[rand(0, 5)],
             'idCategory' =>rand(1,10)
         ];
     }

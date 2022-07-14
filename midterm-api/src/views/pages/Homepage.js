@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -25,8 +25,8 @@ const HomePage = () => {
   };
   return (
     <div className="container-md">
-      <a href="/">Home</a>
-
+      <Link to="/" className="me-5">Home</Link>
+      <Link to="/statistics">Statistics</Link>
       {/* <div className="mb-3" style={{ width: 600 }}>
         <InputGroup className="mb-10">
           <Form.Control
